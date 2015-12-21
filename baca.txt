@@ -1,0 +1,2 @@
+1. extrak dulu file mysqlnya
+2. import atau copas filenya sql. di web server kamu..
