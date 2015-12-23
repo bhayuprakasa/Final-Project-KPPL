@@ -15,15 +15,27 @@ include "connect.php";
 			<div id="content">
 				<h3>Order Product</h3>
 				<?php
-					$id = $_GET['product'];
+					/*$id = $_GET['product'];
 					$query = mysql_query("select * from product where id = '$id'");
-					$data = mysql_fetch_array($query);
+					$data = mysql_fetch_array($query);*/
 				?>
 				<center>
 					<img src="<?php echo $data['link_image'];?>"><br />
 					<form action="order.php?product=<?php echo $id?>" method="post">
 					<input type="hidden" name="id" value="<?php echo $data['id']?>">
 					<table>
+					
+					<td>Produk</td>
+						<td><form action="" method="post">   
+						<select name="category">  
+						<option value="">Silahkan Pilih</option>  
+						<option value="Apel">Karikatur</option>  
+						<option value="Jeruk">Vector</option>  
+						</select>   
+						<input type="submit" name="enter" value="Enter">   
+						</form></td>
+						
+						
 						<tr>
 							<td>Nama</td>
 							<td><input type="text" name="name"></td>
@@ -47,6 +59,10 @@ include "connect.php";
 					</table>
 				</center>
 				<?php
+					$query = mysql_query("select * from category");
+					while($data=mysql_fetch_array($query))
+					{
+					
 					$name = $_POST['name'];
 					$email = $_POST['email'];
 					$address = $_POST['address'];
@@ -59,7 +75,7 @@ include "connect.php";
 								}
 							else
 								{
-									$insert = "insert into order_product set name = '$name',email = '$email', address = '$address',number_phone = 62".$nohp.",id_product = '$id',status=1";
+									$insert = "insert into order_product set name = '$name',email = '$email', address = '$address',number_phone = ".$nohp.",id_product = '$id'";
 									$query = mysql_query($insert);
 									if($query == TRUE)
 										{
@@ -72,12 +88,22 @@ include "connect.php";
 										}
 								}
 						}
+					if(isset($_POST['enter']))   
+						{   
+							if(empty($_POST['category']))  
+								{  
+									echo "Anda belum memilih!";  
+								}  
+					else echo "Pilihan anda: ".$_POST['category'];  
+								}   
+								}
 				?>
+			
 			</div>
 			<div id="sidebar">
 				<a href="index.php">Home</a><br>
 				<a href="profil.php">Profil Kelompok</a><br>
-				<a href="admin">Halaman Admin</a><br>
+				<a href="order.php">Order</a><br>
 			</div>
 			<div style="clear:both">
 			</div>

@@ -50,7 +50,7 @@ include "connect.php";
 			<div id="sidebar">
 				<a href="index.php">Home</a><br>
 				<a href="profil.php">Profil Kelompok</a><br>
-				<a href="admin">Halaman Admin</a><br>
+				<a href="order.php">Order</a><br>
 			</div>
 			<div style="clear:both">
 			</div>
