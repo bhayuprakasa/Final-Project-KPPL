@@ -14,12 +14,53 @@ include "connect.php";
 			</div>
 			<div id="content">
 				<h3>Order Product</h3>
-				<?php
+				
+				
+				<section id="contactUs" class="row grey">
+      <div class="center">
+        <h1>Order Here!</h1>
+        
+        <div class="columns">
+          <div class="half">
+            <form action="prsPSN.php" class="form">
+              <fieldset>
+                <h2>Feedback form</h2>
+                <div class="formRow">
+                  <div class="textField">
+                    <input name="nama" type="text" id="nama" placeholder="Your name ...">
+                  </div>
+                </div>
+                <div class="formRow">
+                  <div class="textField">
+                    <input name="email" type="text" id="email" placeholder="Your Email ...">
+                  </div>
+                </div>
+				<div class="formRow">
+                  <div class="textField">
+                    <input name="number_handpone" type="text" id="number_phone" placeholder="Your number phone ...">
+                  </div>
+                </div>
+				<div class="formRow">
+                  <div class="textField">
+                    <textarea name="address" cols="20" rows="4"  id="address" placeholder="Your Address ..."></textarea>
+                  </div>
+                </div>
+				<div class="formRow">
+                  <button class="btnSmall btn submit right"> <span>Send Message</span> </button>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+         
+        </div>
+      </div>
+    </section>
+	<?php
 					/*$id = $_GET['product'];
 					$query = mysql_query("select * from product where id = '$id'");
 					$data = mysql_fetch_array($query);*/
-				?>
-				<center>
+				
+				/*<center>
 					<img src="<?php echo $data['link_image'];?>"><br />
 					<form action="order.php?product=<?php echo $id?>" method="post">
 					<input type="hidden" name="id" value="<?php echo $data['id']?>">
@@ -57,9 +98,10 @@ include "connect.php";
 							<td><input type="submit" value="order"> </td>
 						</tr>
 					</table>
-				</center>
+				</center>*/
+				?>
 				<?php
-					$query = mysql_query("select * from category");
+					/*$query = mysql_query("select * from category");
 					while($data=mysql_fetch_array($query))
 					{
 					
@@ -96,7 +138,7 @@ include "connect.php";
 								}  
 					else echo "Pilihan anda: ".$_POST['category'];  
 								}   
-								}
+								}*/
 				?>
 			
 			</div>
